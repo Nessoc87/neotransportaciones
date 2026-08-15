@@ -21,7 +21,7 @@ export default function QuoteForm() {
     const metodo = (form.elements.namedItem("metodo") as RadioNodeList).value;
 
     try {
-      await fetch("https://n8n.srv1300038.hstgr.cloud/webhook/neo-cotizacion", {
+      await fetch("https://n8n.srv1300038.hstgr.cloud/webhook/whatsapp3", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({nombre,empresa,telefono,email,origen,destino,metodo})
