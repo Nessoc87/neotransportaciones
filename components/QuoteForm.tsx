@@ -35,7 +35,15 @@ export default function QuoteForm() {
       console.error("Error enviando a n8n:", error);
     }
 
-    const mensaje = "PRUEBA NEO 999999";
+    const mensaje = `🚚 NUEVA SOLICITUD DE COTIZACIÓN
+
+👤 Nombre: ${nombre}
+🏢 Empresa: ${empresa}
+📞 Teléfono: ${telefono}
+📧 Correo: ${email}
+
+📍 Origen: ${origen}
+📍 Destino: ${destino}`;
 
     window.open(
       `https://wa.me/528123368621?text=${encodeURIComponent(mensaje)}`,
