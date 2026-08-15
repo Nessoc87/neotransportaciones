@@ -45,14 +45,14 @@ export default function Navbar() {
     Proceso
   </a>
 
-  <a href="#cotizacion" className="hover:text-orange-500 transition">
+  {/*<a href="#cotizacion" className="hover:text-orange-500 transition">
     Cotizar
-  </a>
+  </a> */}
 
 </nav>
 
         {/* Botón */}
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-xl font-semibold transition">
+        <button ="#cotizacion" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-xl font-semibold transition">
           Cotizar
         </button>
 
