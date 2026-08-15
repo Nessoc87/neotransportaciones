@@ -18,8 +18,8 @@ export default function Hero() {
             maniobras y carga general con cobertura en todo México.
           </p>
 
-          {/* <div className="mt-10 flex flex-wrap gap-4">
-            <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold transition">
+           <div className="mt-10 flex flex-wrap gap-4">
+            {/*<button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold transition">
               Solicitar Cotización
             </button> */}
 
