@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Neo Transportaciones | Soluciones Logísticas en Monterrey",
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     "fletes foráneos",
     "Neo Transportaciones",
     "logística",
-    "transporte de mercancías"
+    "transporte de mercancías",
   ],
 
   authors: [
@@ -38,3 +39,15 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es-MX">
+      <body>{children}</body>
+    </html>
+  );
+}
