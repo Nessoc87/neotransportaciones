@@ -1,7 +1,6 @@
 "use client";
 
 export default function QuoteForm() {
-
   const enviarWhatsApp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -13,32 +12,30 @@ export default function QuoteForm() {
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
     const origen = (form.elements.namedItem("origen") as HTMLInputElement).value;
     const destino = (form.elements.namedItem("destino") as HTMLInputElement).value;
-    await fetch("https://n8n.srv1300038.hstgr.cloud/webhook/neo-cotizacion", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    nombre,
-    empresa,
-    telefono,
-    email,
-    origen,
-    destino,
-  }),
-});
 
-    const mensaje = `
-🚚 NUEVA SOLICITUD DE COTIZACIÓN
+    try {
+      await fetch(
+        "https://n8n.srv1300038.hstgr.cloud/webhook/neo-cotizacion",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nombre,
+            empresa,
+            telefono,
+            email,
+            origen,
+            destino,
+          }),
+        }
+      );
+    } catch (error) {
+      console.error("Error enviando a n8n:", error);
+    }
 
-👤 Nombre: ${nombre}
-🏢 Empresa: ${empresa}
-📞 Teléfono: ${telefono}
-📧 Email: ${email}
-
-📍 Origen: ${origen}
-📍 Destino: ${destino}
-`;
+    const mensaje = "PRUEBA NEO 999999";
 
     window.open(
       `https://wa.me/528123368621?text=${encodeURIComponent(mensaje)}`,
@@ -47,11 +44,8 @@ export default function QuoteForm() {
   };
 
   return (
-    <section
-      id="cotizacion"
-      className="bg-slate-100 py-20"
-    >
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="cotizacion" className="py-20 bg-slate-100">
+      <div className="container mx-auto px-6">
 
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-slate-900">
