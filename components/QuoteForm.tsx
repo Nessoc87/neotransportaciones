@@ -62,12 +62,12 @@ export default function QuoteForm() {
         </div>
 
         <form onSubmit={enviarFormulario} className="bg-white rounded-2xl shadow-xl p-8 grid md:grid-cols-2 gap-6">
-          <input name="nombre" placeholder="Nombre" required className="border rounded-lg p-4"/>
-          <input name="empresa" placeholder="Empresa" className="border rounded-lg p-4"/>
-          <input name="telefono" placeholder="Teléfono" required className="border rounded-lg p-4"/>
-          <input name="email" type="email" placeholder="Correo electrónico" required className="border rounded-lg p-4"/>
-          <input name="origen" placeholder="Origen" required className="border rounded-lg p-4"/>
-          <input name="destino" placeholder="Destino" required className="border rounded-lg p-4"/>
+          <input name="nombre" placeholder="Nombre" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
+          <input name="empresa" placeholder="Empresa" className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"  
+          <input name="telefono" placeholder="Teléfono" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"
+          <input name="email" type="email" placeholder="Correo electrónico" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"
+          <input name="origen" placeholder="Origen" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
+          <input name="destino" placeholder="Destino" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
 
           <div className="md:col-span-2">
             <p className="font-semibold mb-3">¿Cómo deseas recibir tu cotización?</p>
