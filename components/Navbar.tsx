@@ -51,10 +51,16 @@ export default function Navbar() {
 
 </nav>
 
-        {/* Botón */}
-        <button ="#cotizacion" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-xl font-semibold transition">
-          Cotizar
-        </button>
+        <button
+  onClick={() => {
+    document
+      .getElementById("cotizacion")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl"
+>
+  Solicitar Cotización
+</button>
 
       </div>
     </header>
