@@ -43,7 +43,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-2">
               <Phone size={18}/>
-              <span>+52 XXX XXX XXXX</span>
+              <span>+52 812 336 8621</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -66,21 +66,37 @@ export default function Footer() {
   </h3>
 
   <ul className="space-y-2 text-slate-400">
-    <li className="hover:text-orange-500 cursor-pointer transition">
-      Inicio
+
+    <li>
+      <a href="#inicio" className="hover:text-orange-500 transition">
+        Inicio
+      </a>
     </li>
 
-    <li className="hover:text-orange-500 cursor-pointer transition">
-      Servicios
+    <li>
+      <a href="#servicios" className="hover:text-orange-500 transition">
+        Servicios
+      </a>
     </li>
 
-    <li className="hover:text-orange-500 cursor-pointer transition">
-      Contacto
+    <li>
+      <a href="https://wa.me/528123368621" target="_blank" className="hover:text-orange-500 transition">
+        WhatsApp
+      </a>
     </li>
 
-    <li className="hover:text-orange-500 cursor-pointer transition">
-      Política de Privacidad
+    <li>
+      <a href="mailto:logistica@neotransportaciones.com" className="hover:text-orange-500 transition">
+        Correo
+      </a>
     </li>
+
+    <li>
+      <a href="/privacy" className="hover:text-orange-500 transition">
+        Política de Privacidad
+      </a>
+    </li>
+
   </ul>
 </div>
 
