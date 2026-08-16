@@ -23,9 +23,11 @@ export default function Hero() {
               Solicitar Cotización
             </button> */}
 
-            <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold transition">
-              Contactar
-            </button> 
+            <a
+             href="#cotizacion"
+            className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-semibold transition">
+              Solicitar Cotización
+            </a> 
           </div>
         </div>
 

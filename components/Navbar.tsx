@@ -51,16 +51,12 @@ export default function Navbar() {
 
 </nav>
 
-        <button
-  onClick={() => {
-    document
-      .getElementById("cotizacion")
-      ?.scrollIntoView({ behavior: "smooth" });
-  }}
+        <a
+  href="#cotizacion"
   className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl"
 >
   Solicitar Cotización
-</button>
+</a>
 
       </div>
     </header>
