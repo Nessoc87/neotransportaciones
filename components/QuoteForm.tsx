@@ -54,14 +54,16 @@ export default function QuoteForm() {
   };
 
   return (
-    <section id="cotizacion" className="py-20 bg-slate-100">
+    <section id="cotizacion" className="py-24 bg-gradient-to-b from-slate-100 to-white">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-10">
           <h2 className="text-4xl font-bold">Solicita tu cotización</h2>
-          <p className="mt-4 text-slate-600">Completa el formulario y un asesor te atenderá.</p>
+          <p className="md:col-span-2 w-full bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg py-5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+            Completa el formulario y un asesor te atenderá.
+          </p>
         </div>
 
-        <form onSubmit={enviarFormulario} className="bg-white rounded-2xl shadow-xl p-8 grid md:grid-cols-2 gap-6">
+        <form onSubmit={enviarFormulario} className="bg-white rounded-3xl shadow-2xl border border-slate-200 p-8 md:p-10 grid md:grid-cols-2 gap-6">
           <input name="nombre" placeholder="Nombre" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
           <input name="empresa" placeholder="Empresa" className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
           <input name="telefono" placeholder="Teléfono" required className="w-full rounded-xl border-2 border-slate-300 bg-white px-5 py-4 text-slate-900 text-lg placeholder:text-slate-400 shadow-sm transition-all duration-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-100 focus:outline-none"/>
