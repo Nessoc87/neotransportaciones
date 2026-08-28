@@ -12,73 +12,115 @@ export default function Services() {
     {
       icono: Truck,
       titulo: "Fletes Locales",
-      descripcion: "Transporte seguro y puntual dentro de la ciudad.",
+      descripcion:
+        "Transporte confiable dentro de Monterrey y su área metropolitana, con atención puntual y seguimiento del servicio.",
     },
     {
       icono: MapPinned,
       titulo: "Fletes Foráneos",
-      descripcion: "Cobertura nacional con seguimiento de carga.",
+      descripcion:
+        "Movemos tu mercancía entre ciudades y estados de México, con atención y seguimiento durante el servicio.",
     },
     {
       icono: Package,
       titulo: "Mudanzas",
-      descripcion: "Servicio residencial y empresarial.",
+      descripcion:
+        "Soluciones para mudanzas residenciales, oficinas y comercios, adaptadas a las necesidades de cada cliente.",
     },
     {
       icono: Building2,
       titulo: "Maniobras",
-      descripcion: "Personal capacitado para maniobras especializadas.",
+      descripcion:
+        "Apoyo para carga, descarga y movimiento de mercancía cuando necesitas algo más que transporte.",
     },
     {
       icono: Boxes,
       titulo: "Carga General",
-      descripcion: "Transporte para empresas y particulares.",
+      descripcion:
+        "Transporte de mercancías para empresas, comercios, emprendedores y particulares.",
     },
     {
       icono: MapPin,
       titulo: "Recolección y Entrega",
-      descripcion: "Servicio puerta a puerta con puntualidad.",
+      descripcion:
+        "Recogemos y entregamos tu mercancía en el punto que necesitas, con atención durante todo el servicio.",
     },
   ];
 
   return (
     <section
       id="servicios"
-      className="max-w-7xl mx-auto py-20 px-6"
+      className="bg-white border-b border-slate-200"
     >
-      <div className="text-center mb-14">
-        <h2 className="text-4xl font-bold">
-          Nuestros Servicios
-        </h2>
+      <div className="max-w-7xl mx-auto px-6 py-24">
 
-        <p className="text-gray-600 mt-4">
-          Soluciones logísticas para personas y empresas.
-        </p>
-      </div>
+        {/* Encabezado */}
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {servicios.map((servicio) => (
-          <div
-            key={servicio.titulo}
-            className="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
-          >
-            <div className="mb-6">
-              <servicio.icono
-                size={48}
-                className="text-orange-500"
-                strokeWidth={2}
-              />
-            </div>
+        <div className="max-w-3xl mb-16">
 
-            <h3 className="text-2xl font-bold">
-              {servicio.titulo}
-            </h3>
+          <div className="flex items-center gap-4 mb-5">
 
-            <p className="text-gray-600 mt-4">
-              {servicio.descripcion}
+            <div className="w-1 h-10 bg-orange-500 rounded-full" />
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-orange-500">
+              Nuestros servicios
             </p>
+
           </div>
-        ))}
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            Soluciones de transporte para cada necesidad.
+          </h2>
+
+          <p className="mt-6 text-lg lg:text-xl text-slate-600 leading-8">
+            Desde un envío local hasta el traslado de mercancía entre estados,
+            ponemos a tu disposición soluciones logísticas para empresas,
+            comercios, emprendedores y particulares.
+          </p>
+
+        </div>
+
+        {/* Servicios */}
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+          {servicios.map((servicio) => {
+            const Icono = servicio.icono;
+
+            return (
+              <div
+                key={servicio.titulo}
+                className="group rounded-2xl border border-slate-200 bg-slate-50 p-8 transition duration-300 hover:-translate-y-1 hover:bg-white hover:border-slate-300 hover:shadow-xl"
+              >
+
+                {/* Icono */}
+
+                <div className="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center transition duration-300 group-hover:bg-orange-500">
+
+                  <Icono
+                    size={27}
+                    className="text-white"
+                    strokeWidth={1.8}
+                  />
+
+                </div>
+
+                {/* Contenido */}
+
+                <h3 className="mt-7 text-2xl font-bold text-slate-900">
+                  {servicio.titulo}
+                </h3>
+
+                <p className="mt-4 text-slate-600 leading-7">
+                  {servicio.descripcion}
+                </p>
+
+              </div>
+            );
+          })}
+
+        </div>
+
       </div>
     </section>
   );

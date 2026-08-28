@@ -12,16 +12,33 @@ export default function Home() {
   return (
     <>
       <TopBar />
+
       <Navbar />
+
       <main className="min-h-screen bg-slate-100">
+
+        {/* Presentación */}
         <Hero />
+
+        {/* Servicios */}
         <Services />
-        <HowItWorks />
-        <QuoteForm />
+
+        {/* Confianza */}
         <WhyUs />
-        <FloatingWhatsApp />
-        <Footer/>
+
+        {/* Proceso */}
+        <HowItWorks />
+
+        {/* Cotización */}
+        <QuoteForm />
+
       </main>
+
+      {/* WhatsApp */}
+      <FloatingWhatsApp />
+
+      {/* Pie de página */}
+      <Footer />
     </>
   );
 }

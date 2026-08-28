@@ -10,25 +10,25 @@ const reasons = [
     icon: ShieldCheck,
     title: "Seguridad",
     description:
-      "Protegemos tu mercancía durante todo el traslado.",
+      "Cuidamos tu mercancía durante cada etapa del traslado, procurando que llegue en las mejores condiciones.",
   },
   {
     icon: Clock3,
     title: "Puntualidad",
     description:
-      "Cumplimos los tiempos acordados para cada servicio.",
+      "Coordinamos cada servicio para cumplir con los tiempos acordados y mantenerte informado.",
   },
   {
     icon: Truck,
-    title: "Cobertura",
+    title: "Cobertura nacional",
     description:
-      "Realizamos servicios locales y foráneos en todo México.",
+      "Realizamos fletes locales y foráneos para empresas, comercios, emprendedores y particulares.",
   },
   {
     icon: Headset,
     title: "Atención personalizada",
     description:
-      "Te acompañamos desde la cotización hasta la entrega.",
+      "Te acompañamos desde la cotización hasta la entrega para que siempre tengas a quién acudir.",
   },
 ];
 
@@ -36,24 +36,45 @@ export default function WhyUs() {
   return (
     <section
       id="nosotros"
-      className="py-24 bg-slate-50"
+      className="relative overflow-hidden bg-slate-100 border-b border-slate-200"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      {/* Fondo decorativo */}
 
-        <div className="text-center mb-16">
+      <div className="absolute -top-40 right-[-100px] h-96 w-96 rounded-full bg-orange-400/10 blur-3xl" />
 
-          <h2 className="text-4xl font-bold text-slate-900">
-            ¿Por qué elegir Neo Transportaciones?
+      <div className="absolute bottom-[-150px] left-[-100px] h-80 w-80 rounded-full bg-slate-400/20 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6 py-24">
+
+        {/* Encabezado */}
+
+        <div className="max-w-3xl mb-16">
+
+          <div className="flex items-center gap-4 mb-5">
+
+            <div className="w-1 h-10 bg-orange-500 rounded-full" />
+
+            <p className="uppercase tracking-[0.3em] text-sm font-bold text-orange-500">
+              ¿Por qué elegirnos?
+            </p>
+
+          </div>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            Transporte con confianza de principio a fin.
           </h2>
 
-          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
-            Trabajamos para que cada envío llegue con seguridad,
-            puntualidad y la atención que nuestros clientes merecen.
+          <p className="mt-6 text-lg lg:text-xl text-slate-600 leading-8">
+            Sabemos que detrás de cada envío hay productos, proyectos,
+            negocios y personas que necesitan que las cosas lleguen bien.
+            Por eso cuidamos cada servicio con responsabilidad y atención.
           </p>
 
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Razones */}
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
           {reasons.map((item) => {
             const Icon = item.icon;
@@ -61,20 +82,24 @@ export default function WhyUs() {
             return (
               <div
                 key={item.title}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition"
+                className="group bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300"
               >
-                <div className="w-16 h-16 rounded-full bg-orange-100 mx-auto flex items-center justify-center mb-6">
+
+                <div className="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mb-7 group-hover:bg-orange-500 transition duration-300">
+
                   <Icon
-                    size={32}
-                    className="text-orange-500"
+                    size={27}
+                    className="text-white"
+                    strokeWidth={1.8}
                   />
+
                 </div>
 
-                <h3 className="font-bold text-xl mb-3">
+                <h3 className="text-xl font-bold text-slate-900">
                   {item.title}
                 </h3>
 
-                <p className="text-slate-600">
+                <p className="mt-4 text-slate-600 leading-7">
                   {item.description}
                 </p>
 

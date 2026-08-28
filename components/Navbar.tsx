@@ -7,138 +7,206 @@ import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
+  const cerrarMenu = () => {
+    setMenuAbierto(false);
+  };
+
+  const whatsappBot =
+    "https://wa.me/5218180845338?text=Hola,%20vi%20la%20página%20de%20Neo%20Transportaciones%20y%20me%20gustaría%20cotizar%20un%20servicio.";
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white border-b border-slate-200">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="Neo Transportaciones"
-            width={120}
-            height={120}
-            priority
-          />
+      <div className="max-w-7xl mx-auto px-6">
 
-          <div className="hidden sm:block">
-            <h1 className="text-2xl font-bold text-slate-900">
-              Neo Transportaciones
-            </h1>
+        <div className="min-h-28 flex items-center justify-between gap-10">
 
-            <p className="text-sm text-gray-500">
-              Soluciones Logísticas
-            </p>
-          </div>
-        </div>
-
-        {/* Menú escritorio */}
-        <nav className="hidden lg:flex items-center gap-8 font-medium">
-
-          <a href="#inicio" className="hover:text-orange-500 transition">
-            Inicio
-          </a>
-
-          <a href="#servicios" className="hover:text-orange-500 transition">
-            Servicios
-          </a>
-
-          <a href="#nosotros" className="hover:text-orange-500 transition">
-            Nosotros
-          </a>
-
-          <a href="#proceso" className="hover:text-orange-500 transition">
-            Proceso
-          </a>
+          {/* LOGO / IDENTIDAD */}
 
           <a
-            href="https://wa.me/528123368621"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-orange-500 transition"
+            href="#inicio"
+            onClick={cerrarMenu}
+            className="flex items-center gap-5 shrink-0"
           >
-            WhatsApp
+
+            <div className="flex items-center justify-center">
+
+              <Image
+                src="/logo.png"
+                alt="Neo Transportaciones"
+                width={125}
+                height={125}
+                priority
+                className="w-[125px] h-[125px] object-contain"
+              />
+
+            </div>
+
+            <div className="hidden md:block border-l border-slate-200 pl-5">
+
+              <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+                Neo Transportaciones
+              </h1>
+
+              <p className="mt-1 text-base text-slate-500">
+                Soluciones Logísticas
+              </p>
+
+            </div>
+
           </a>
 
-          <a
-            href="mailto:logistica@neotransportaciones.com"
-            className="hover:text-orange-500 transition"
-          >
-            Correo
-          </a>
+          {/* MENÚ */}
 
-          <a
-            href="#cotizacion"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl transition"
-          >
-            Solicitar Cotización
-          </a>
+          <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-slate-700">
 
-        </nav>
-
-        {/* Botón menú celular */}
-        <button
-          className="lg:hidden"
-          onClick={() => setMenuAbierto(!menuAbierto)}
-        >
-          {menuAbierto ? (
-            <X size={30} />
-          ) : (
-            <Menu size={30} />
-          )}
-        </button>
-      </div>
-
-      {/* Menú móvil */}
-      {menuAbierto && (
-        <div className="lg:hidden bg-white border-t shadow-md">
-
-          <nav className="flex flex-col p-6 gap-5 text-lg">
-
-            <a href="#inicio" onClick={() => setMenuAbierto(false)}>
+            <a
+              href="#inicio"
+              className="hover:text-orange-500 transition"
+            >
               Inicio
             </a>
 
-            <a href="#servicios" onClick={() => setMenuAbierto(false)}>
+            <a
+              href="#servicios"
+              className="hover:text-orange-500 transition"
+            >
               Servicios
             </a>
 
-            <a href="#nosotros" onClick={() => setMenuAbierto(false)}>
+            <a
+              href="#nosotros"
+              className="hover:text-orange-500 transition"
+            >
               Nosotros
             </a>
 
-            <a href="#proceso" onClick={() => setMenuAbierto(false)}>
-              Proceso
+            <a
+              href="#procesos"
+              className="hover:text-orange-500 transition"
+            >
+              Cómo trabajamos
+            </a>
+
+          </nav>
+
+          {/* COTIZACIÓN */}
+
+          <a
+            href={whatsappBot}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex items-center justify-center bg-slate-900 hover:bg-orange-500 text-white px-7 py-3.5 rounded-lg font-semibold transition duration-300 shadow-sm whitespace-nowrap"
+          >
+            Cotización 24/7
+          </a>
+
+          {/* MENÚ MÓVIL */}
+
+          <button
+            type="button"
+            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+            className="lg:hidden text-slate-900"
+            onClick={() => setMenuAbierto(!menuAbierto)}
+          >
+            {menuAbierto ? (
+              <X size={30} />
+            ) : (
+              <Menu size={30} />
+            )}
+          </button>
+
+        </div>
+
+      </div>
+
+      {/* MENÚ MÓVIL */}
+
+      {menuAbierto && (
+        <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
+
+          <div className="flex items-center gap-4 px-6 py-5 border-b border-slate-200">
+
+            <Image
+              src="/logo.png"
+              alt="Neo Transportaciones"
+              width={75}
+              height={75}
+              className="w-[75px] h-[75px] object-contain"
+            />
+
+            <div>
+
+              <p className="font-bold text-slate-900">
+                Neo Transportaciones
+              </p>
+
+              <p className="text-sm text-slate-500">
+                Soluciones Logísticas
+              </p>
+
+            </div>
+
+          </div>
+
+          <nav className="flex flex-col gap-2 p-6">
+
+            <a
+              href="#inicio"
+              onClick={cerrarMenu}
+              className="rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 transition"
+            >
+              Inicio
             </a>
 
             <a
-              href="https://wa.me/528123368621"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuAbierto(false)}
+              href="#servicios"
+              onClick={cerrarMenu}
+              className="rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 transition"
             >
-              WhatsApp
+              Servicios
             </a>
 
             <a
-              href="mailto:logistica@neotransportaciones.com"
-              onClick={() => setMenuAbierto(false)}
+              href="#nosotros"
+              onClick={cerrarMenu}
+              className="rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 transition"
             >
-              Correo
+              Nosotros
+            </a>
+
+            <a
+              href="#procesos"
+              onClick={cerrarMenu}
+              className="rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 transition"
+            >
+              Cómo trabajamos
             </a>
 
             <a
               href="#cotizacion"
-              onClick={() => setMenuAbierto(false)}
-              className="bg-orange-500 text-white text-center py-3 rounded-xl font-bold"
+              onClick={cerrarMenu}
+              className="rounded-lg px-4 py-3 font-medium text-slate-700 hover:bg-slate-100 transition"
             >
-              Solicitar Cotización
+              Cotización
+            </a>
+
+            <a
+              href={whatsappBot}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={cerrarMenu}
+              className="mt-3 rounded-lg bg-slate-900 hover:bg-orange-500 text-white text-center py-4 font-semibold transition"
+            >
+              Cotización 24/7
             </a>
 
           </nav>
 
         </div>
       )}
+
     </header>
   );
 }
